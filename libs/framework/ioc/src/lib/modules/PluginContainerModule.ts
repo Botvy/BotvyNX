@@ -7,5 +7,4 @@ export class PluginContainerModule extends ContainerModule {
             bind(PluginManager).toSelf().inSingletonScope();
         });
     }
-
 }
