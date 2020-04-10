@@ -20,7 +20,9 @@ export class LoggerContainerModule extends ContainerModule {
             ],
             format: format.combine(
                 format.colorize(),
-                format.timestamp(),
+                format.timestamp({
+                    format: 'DD.MM.YYYY HH:mm:ss',
+                }),
                 format.printf((context) => {
                     return `[${context.timestamp}] [${context.level}] ${context.message}`;
                 }),
