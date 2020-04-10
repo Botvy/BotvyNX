@@ -6,13 +6,20 @@ import { Services } from '@botvy-nx/framework/ioc';
 
 @injectable()
 export class GetVersionIPCEventHandler extends IPCEventHandler<string> {
-    private logger: Logger;
+    private readonly logger: Logger;
+
+    /**
+     * The application version
+     */
+    private readonly version: string;
 
     constructor(
         @inject(Services.Logging.Logger) logger: Logger,
+        @inject(Services.System.Version) version: string,
     ) {
         super('get-app-version');
         this.logger = logger;
+        this.version = version;
     }
 
     public async handleEvent(
@@ -21,6 +28,6 @@ export class GetVersionIPCEventHandler extends IPCEventHandler<string> {
     ): Promise<string> {
         this.logger.info('Requesting application version');
 
-        return '0.0.0';
+        return this.version;
     }
 }

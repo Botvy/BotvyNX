@@ -1,8 +1,11 @@
 export const Services = {
+    IoC: {
+        InitializationSide: 'Service.IoC.InitializationSide',
+    },
     Logging: {
         Logger: 'Service.Logging.Logger',
     },
-    IoC: {
-        InitializationSide: 'Service.IoC.InitializationSide',
+    System: {
+        Version: 'Service.System.Version',
     },
 };
