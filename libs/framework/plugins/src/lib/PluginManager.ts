@@ -1,8 +1,9 @@
 import { IPlugin } from './IPlugin';
-import { injectable } from 'inversify';
+import { inject, injectable } from 'inversify';
 import { existsSync, readdirSync } from 'fs';
 import { resolve } from 'path';
 import { Logger } from 'winston';
+import { Services } from '@botvy-nx/framework/ioc';
 
 
 @injectable()
@@ -11,7 +12,10 @@ export class PluginManager {
 
     private logger: Logger;
 
-    constructor() {
+    constructor(
+        @inject(Services.Logging.Logger) logger: Logger,
+    ) {
+        this.logger = logger;
         this.loadedPlugins = [];
     }
 

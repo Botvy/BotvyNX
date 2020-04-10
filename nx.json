@@ -31,6 +31,9 @@
         },
         "framework-plugins": {
             "tags": []
+        },
+        "framework-ioc": {
+            "tags": []
         }
     }
 }

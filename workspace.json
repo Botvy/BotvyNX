@@ -226,6 +226,47 @@
                     }
                 }
             }
+        },
+        "framework-ioc": {
+            "root": "libs/framework/ioc",
+            "sourceRoot": "libs/framework/ioc/src",
+            "projectType": "library",
+            "schematics": {},
+            "architect": {
+                "lint": {
+                    "builder": "@nrwl/linter:lint",
+                    "options": {
+                        "linter": "eslint",
+                        "config": "libs/framework/ioc/.eslintrc",
+                        "tsConfig": [
+                            "libs/framework/ioc/tsconfig.lib.json",
+                            "libs/framework/ioc/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!libs/framework/ioc/**"
+                        ]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "libs/framework/ioc/jest.config.js",
+                        "tsConfig": "libs/framework/ioc/tsconfig.spec.json",
+                        "passWithNoTests": true
+                    }
+                },
+                "build": {
+                    "builder": "@nrwl/node:package",
+                    "options": {
+                        "outputPath": "dist/libs/framework/ioc",
+                        "tsConfig": "libs/framework/ioc/tsconfig.lib.json",
+                        "packageJson": "libs/framework/ioc/package.json",
+                        "main": "libs/framework/ioc/src/index.ts",
+                        "assets": ["libs/framework/ioc/*.md"]
+                    }
+                }
+            }
         }
     },
     "cli": {
