@@ -19,7 +19,8 @@
             "@botvy-nx/framework/plugins": [
                 "libs/framework/plugins/src/index.ts"
             ],
-            "@botvy-nx/framework/ioc": ["libs/framework/ioc/src/index.ts"]
+            "@botvy-nx/framework/ioc": ["libs/framework/ioc/src/index.ts"],
+            "@botvy-nx/framework/events": ["libs/framework/events/src/index.ts"]
         }
     },
     "exclude": ["node_modules", "tmp"]

@@ -34,6 +34,9 @@
         },
         "framework-ioc": {
             "tags": []
+        },
+        "framework-events": {
+            "tags": []
         }
     }
 }

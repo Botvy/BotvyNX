@@ -267,6 +267,47 @@
                     }
                 }
             }
+        },
+        "framework-events": {
+            "root": "libs/framework/events",
+            "sourceRoot": "libs/framework/events/src",
+            "projectType": "library",
+            "schematics": {},
+            "architect": {
+                "lint": {
+                    "builder": "@nrwl/linter:lint",
+                    "options": {
+                        "linter": "eslint",
+                        "config": "libs/framework/events/.eslintrc",
+                        "tsConfig": [
+                            "libs/framework/events/tsconfig.lib.json",
+                            "libs/framework/events/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!libs/framework/events/**"
+                        ]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "libs/framework/events/jest.config.js",
+                        "tsConfig": "libs/framework/events/tsconfig.spec.json",
+                        "passWithNoTests": true
+                    }
+                },
+                "build": {
+                    "builder": "@nrwl/node:package",
+                    "options": {
+                        "outputPath": "dist/libs/framework/events",
+                        "tsConfig": "libs/framework/events/tsconfig.lib.json",
+                        "packageJson": "libs/framework/events/package.json",
+                        "main": "libs/framework/events/src/index.ts",
+                        "assets": ["libs/framework/events/*.md"]
+                    }
+                }
+            }
         }
     },
     "cli": {

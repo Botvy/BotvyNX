@@ -1,34 +1,17 @@
 import 'reflect-metadata';
-import SquirrelEvents from './app/events/squirrel.events';
-import ElectronEvents from './app/events/electron.events';
-import { app, BrowserWindow } from 'electron';
-import App from './app/app';
+import { getContainer, InitializationSide } from '@botvy-nx/framework/ioc';
+import { Application } from './Application';
 
-export default class Main {
-    static initialize() {
-        if (SquirrelEvents.handleEvents()) {
-            // squirrel event handled (except first run event) and app will exit in 1000ms, so don't do anything else
-            app.quit();
-        }
-    }
+(async () => {
+    const container = await getContainer(
+        InitializationSide.CLIENT,
+    );
 
-    static bootstrapApp() {
-        App.main(app, BrowserWindow);
-    }
+    container.bind(Application).toSelf();
 
-    static bootstrapAppEvents() {
-        ElectronEvents.bootstrapElectronEvents();
+    const application = container.get(Application);
 
-        // initialize auto updater service
-        if (!App.isDevelopmentMode()) {
-            // UpdateEvents.initAutoUpdateService();
-        }
-    }
-}
-
-// handle setup events as quickly as possible
-Main.initialize();
-
-// bootstrap app
-Main.bootstrapApp();
-Main.bootstrapAppEvents();
+    application.initialize();
+    application.bootstrapApp();
+    application.bootstrapAppEvents();
+})();
