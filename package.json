@@ -27,6 +27,7 @@
     },
     "private": true,
     "dependencies": {
+        "@nrwl/node": "^9.2.2",
         "@types/react-redux": "^7.1.7",
         "document-register-element": "1.13.1",
         "react": "16.12.0",
