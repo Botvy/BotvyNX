@@ -5,6 +5,8 @@
 
 import { app, ipcMain } from 'electron';
 import { environment } from '../../environments/environment';
+import { getContainer, Services } from '@botvy-nx/framework/ioc';
+import { Logger } from 'winston';
 
 export default class ElectronEvents {
     static bootstrapElectronEvents(): Electron.IpcMain {
@@ -12,14 +14,21 @@ export default class ElectronEvents {
     }
 }
 
-// Retrieve app version
-ipcMain.handle('get-app-version', (event) => {
-    console.log(`Fetching application version... [v${environment.version}]`);
+(async () => {
+    const container = await getContainer();
+    const logger = container.get<Logger>(Services.Logging.Logger);
 
-    return environment.version;
-});
+    // Retrieve app version
+    ipcMain.handle('get-app-version', (event) => {
+        logger.info(`Fetching application version... [v${environment.version}]`);
+
+        return environment.version;
+    });
 
 // Handle App termination
-ipcMain.on('quit', (event, code) => {
-    app.exit(code);
-});
+    ipcMain.on('quit', (event, code) => {
+        logger.info('Quitting application');
+
+        app.exit(code);
+    });
+})();
