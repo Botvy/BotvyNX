@@ -112,6 +112,79 @@
                     }
                 }
             }
+        },
+        "client": {
+            "root": "apps/client",
+            "sourceRoot": "apps/client/src",
+            "projectType": "application",
+            "prefix": "client",
+            "schematics": {},
+            "architect": {
+                "build": {
+                    "builder": "nx-electron:build",
+                    "options": {
+                        "outputPath": "dist/apps/client",
+                        "main": "apps/client/src/main.ts",
+                        "tsConfig": "apps/client/tsconfig.app.json",
+                        "assets": ["apps/client/src/assets"]
+                    },
+                    "configurations": {
+                        "production": {
+                            "optimization": true,
+                            "extractLicenses": true,
+                            "inspect": false,
+                            "fileReplacements": [
+                                {
+                                    "replace": "apps/client/src/environments/environment.ts",
+                                    "with": "apps/client/src/environments/environment.prod.ts"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "nx-electron:execute",
+                    "options": {
+                        "buildTarget": "client:build"
+                    }
+                },
+                "package": {
+                    "builder": "nx-electron:package",
+                    "options": {
+                        "name": "client",
+                        "frontendProject": "frontend",
+                        "out": "dist/packages"
+                    }
+                },
+                "make": {
+                    "builder": "nx-electron:make",
+                    "options": {
+                        "name": "client",
+                        "frontendProject": "frontend",
+                        "out": "dist/executables"
+                    }
+                },
+                "lint": {
+                    "builder": "@nrwl/linter:lint",
+                    "options": {
+                        "linter": "eslint",
+                        "config": "apps/client/.eslintrc",
+                        "tsConfig": [
+                            "apps/client/tsconfig.app.json",
+                            "apps/client/tsconfig.spec.json"
+                        ],
+                        "exclude": ["**/node_modules/**", "!apps/client/**"]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "apps/client/jest.config.js",
+                        "tsConfig": "apps/client/tsconfig.spec.json",
+                        "passWithNoTests": true
+                    }
+                }
+            }
         }
     },
     "cli": {
