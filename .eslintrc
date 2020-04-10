@@ -6,8 +6,13 @@
         "sourceType": "module",
         "project": "./tsconfig.json"
     },
-    "ignorePatterns": ["**/*"],
-    "plugins": ["@typescript-eslint", "@nrwl/nx"],
+    "ignorePatterns": [
+        "**/*"
+    ],
+    "plugins": [
+        "@typescript-eslint",
+        "@nrwl/nx"
+    ],
     "extends": [
         "eslint:recommended",
         "plugin:@typescript-eslint/eslint-recommended",
@@ -16,6 +21,16 @@
         "prettier/@typescript-eslint"
     ],
     "rules": {
+        "indent": [
+            "error",
+            4
+        ],
+        "@typescript-eslint/interface-name-prefix": [
+            "error",
+            {
+                "prefixWithI": "always"
+            }
+        ],
         "@typescript-eslint/explicit-member-accessibility": "off",
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/no-parameter-properties": "off",
@@ -25,14 +40,21 @@
                 "enforceBuildableLibDependency": true,
                 "allow": [],
                 "depConstraints": [
-                    { "sourceTag": "*", "onlyDependOnLibsWithTags": ["*"] }
+                    {
+                        "sourceTag": "*",
+                        "onlyDependOnLibsWithTags": [
+                            "*"
+                        ]
+                    }
                 ]
             }
         ]
     },
     "overrides": [
         {
-            "files": ["*.tsx"],
+            "files": [
+                "*.tsx"
+            ],
             "rules": {
                 "@typescript-eslint/no-unused-vars": "off"
             }
