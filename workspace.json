@@ -185,6 +185,47 @@
                     }
                 }
             }
+        },
+        "framework-plugins": {
+            "root": "libs/framework/plugins",
+            "sourceRoot": "libs/framework/plugins/src",
+            "projectType": "library",
+            "schematics": {},
+            "architect": {
+                "lint": {
+                    "builder": "@nrwl/linter:lint",
+                    "options": {
+                        "linter": "eslint",
+                        "config": "libs/framework/plugins/.eslintrc",
+                        "tsConfig": [
+                            "libs/framework/plugins/tsconfig.lib.json",
+                            "libs/framework/plugins/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!libs/framework/plugins/**"
+                        ]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "libs/framework/plugins/jest.config.js",
+                        "tsConfig": "libs/framework/plugins/tsconfig.spec.json",
+                        "passWithNoTests": true
+                    }
+                },
+                "build": {
+                    "builder": "@nrwl/node:package",
+                    "options": {
+                        "outputPath": "dist/libs/framework/plugins",
+                        "tsConfig": "libs/framework/plugins/tsconfig.lib.json",
+                        "packageJson": "libs/framework/plugins/package.json",
+                        "main": "libs/framework/plugins/src/index.ts",
+                        "assets": ["libs/framework/plugins/*.md"]
+                    }
+                }
+            }
         }
     },
     "cli": {

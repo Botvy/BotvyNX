@@ -28,6 +28,9 @@
         },
         "client": {
             "tags": []
+        },
+        "framework-plugins": {
+            "tags": []
         }
     }
 }
