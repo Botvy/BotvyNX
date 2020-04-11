@@ -27,7 +27,10 @@ export class Application {
 
     public bootstrapAppEvents() {
         for (const ipcEventHandler of this.ipcEventHandlers) {
-            ipcMain.handle(ipcEventHandler.eventName, ipcEventHandler.handleEvent);
+            ipcMain.handle(
+                ipcEventHandler.eventName,
+                ipcEventHandler.handleEvent,
+            );
         }
 
         // initialize auto updater service

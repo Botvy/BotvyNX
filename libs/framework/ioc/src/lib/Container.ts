@@ -10,7 +10,9 @@ export const getContainer = async (
 ): Promise<Container> => {
     const container = new Container();
 
-    container.bind(Services.IoC.InitializationSide).toConstantValue(initializationSide);
+    container
+        .bind(Services.IoC.InitializationSide)
+        .toConstantValue(initializationSide);
     container.load(new LoggerContainerModule());
     container.load(new PluginContainerModule());
 

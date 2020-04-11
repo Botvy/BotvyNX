@@ -5,16 +5,13 @@ import { resolve } from 'path';
 import { Logger } from 'winston';
 import { Services } from '@botvy-nx/framework/ioc';
 
-
 @injectable()
 export class PluginManager {
     private loadedPlugins: IPlugin[];
 
     private logger: Logger;
 
-    constructor(
-        @inject(Services.Logging.Logger) logger: Logger,
-    ) {
+    constructor(@inject(Services.Logging.Logger) logger: Logger) {
         this.logger = logger;
         this.loadedPlugins = [];
     }
@@ -23,14 +20,11 @@ export class PluginManager {
      * Loads all plugins from the given directory
      * @param pluginDirectory The directory to search in
      */
-    public async loadPlugins(
-        pluginDirectory: string,
-    ) {
+    public async loadPlugins(pluginDirectory: string) {
         // Get the directory contents of the plugin directory
-        const directoryContents = readdirSync(
-            pluginDirectory,
-        ).filter(entry => entry !== '.')
-         .filter(entry => entry !== '..');
+        const directoryContents = readdirSync(pluginDirectory)
+            .filter((entry) => entry !== '.')
+            .filter((entry) => entry !== '..');
 
         // Iterate over each entry
         for (const directory of directoryContents) {
@@ -52,19 +46,10 @@ export class PluginManager {
      * @param baseDirectory The plugins directory which contains all plugins
      * @param pluginDirectory The plugin directory
      */
-    private isPluginDirectory(
-        baseDirectory: string,
-        pluginDirectory: string,
-    ) {
-        const resolvedPath = resolve(
-            baseDirectory,
-            pluginDirectory,
-        );
+    private isPluginDirectory(baseDirectory: string, pluginDirectory: string) {
+        const resolvedPath = resolve(baseDirectory, pluginDirectory);
 
-        const pluginDescriptorFile = resolve(
-            resolvedPath,
-            'plugin.json',
-        );
+        const pluginDescriptorFile = resolve(resolvedPath, 'plugin.json');
 
         return existsSync(pluginDescriptorFile);
     }

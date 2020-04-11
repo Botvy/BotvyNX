@@ -4,8 +4,10 @@ import { Services } from '@botvy-nx/framework/ioc';
 
 export class LoggerContainerModule extends ContainerModule {
     constructor() {
-        super(bind => {
-            bind(Services.Logging.Logger).toConstantValue(this.getConfiguredLogger());
+        super((bind) => {
+            bind(Services.Logging.Logger).toConstantValue(
+                this.getConfiguredLogger(),
+            );
         });
     }
 
@@ -15,9 +17,7 @@ export class LoggerContainerModule extends ContainerModule {
         const consoleTransport = new Console();
 
         return createLogger({
-            transports: [
-                consoleTransport,
-            ],
+            transports: [consoleTransport],
             format: format.combine(
                 format.colorize(),
                 format.timestamp({

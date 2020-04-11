@@ -11,9 +11,7 @@ export abstract class IPCEventHandler<T> {
      */
     eventName: string;
 
-    protected constructor(
-        @unmanaged() eventName: string,
-    ) {
+    protected constructor(@unmanaged() eventName: string) {
         this.eventName = eventName;
 
         this.handleEvent = this.handleEvent.bind(this);
