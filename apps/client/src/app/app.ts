@@ -113,7 +113,7 @@ export default class App {
                 },
             );
 
-            this.mainWindow.openDevTools();
+            this.mainWindow.webContents.openDevTools();
         } else {
             urlToLoad = format({
                 pathname: join(__dirname, '..', rendererAppName, 'index.html'),
