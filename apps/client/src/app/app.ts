@@ -38,27 +38,27 @@ export default class App {
         App.mainWindow = null;
     }
 
-    private static onRedirect(event: any, url: string) {
+    private static async onRedirect(event: any, url: string) {
         if (url !== App.mainWindow.webContents.getURL()) {
             // this is a normal external redirect, open it in a new browser window
             event.preventDefault();
-            shell.openExternal(url);
+            await shell.openExternal(url);
         }
     }
 
-    private static onReady() {
+    private static async onReady() {
         // This method will be called when Electron has finished
         // initialization and is ready to create browser windows.
         // Some APIs can only be used after this event occurs.
         App.initMainWindow();
-        App.loadMainWindow();
+        await App.loadMainWindow();
     }
 
-    private static onActivate() {
+    private static async onActivate() {
         // On macOS it's common to re-create a window in the app when the
         // dock icon is clicked and there are no other windows open.
         if (App.mainWindow === null) {
-            App.onReady();
+            await App.onReady();
         }
     }
 
