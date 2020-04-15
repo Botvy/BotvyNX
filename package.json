@@ -29,7 +29,7 @@
     "dependencies": {
         "@nrwl/node": "^9.2.2",
         "@types/react-redux": "^7.1.7",
-        "document-register-element": "1.13.1",
+        "document-register-element": "1.14.3",
         "electron-devtools-installer": "^3.0.0",
         "inversify": "^5.0.1",
         "react": "16.12.0",
