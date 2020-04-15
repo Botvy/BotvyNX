@@ -8,13 +8,13 @@ Botvy should be fully customizable for the broadcasters, so it doesn't come with
 
 The base only includes the following things:
 
-* base view for the chat (list of chat messages, viewer list, and an input for sending chat messages)
-* settings page (for opening the Chrome developer tools)
+-   base view for the chat (list of chat messages, viewer list, and an input for sending chat messages)
+-   settings page (for opening the Chrome developer tools)
 
 ## Used technologies
 
-* [NX](https://nx.dev) (for managing the monorepository)
-* [Electron](https://www.electronjs.org/) (for the client)
-* [TypeScript](https://www.typescriptlang.org/) (for the type safety)
-* [React](https://reactjs.org/) (as view layer)
-* [Redux](https://redux.js.org/) (for the state management)
+-   [NX](https://nx.dev) (for managing the monorepository)
+-   [Electron](https://www.electronjs.org/) (for the client)
+-   [TypeScript](https://www.typescriptlang.org/) (for the type safety)
+-   [React](https://reactjs.org/) (as view layer)
+-   [Redux](https://redux.js.org/) (for the state management)
