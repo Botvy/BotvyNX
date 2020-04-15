@@ -37,7 +37,7 @@
         "react-redux": "^7.2.0",
         "redux": "^4.0.5",
         "reflect-metadata": "^0.1.13",
-        "styled-components": "5.0.1",
+        "styled-components": "5.1.0",
         "winston": "^3.2.1"
     },
     "devDependencies": {
