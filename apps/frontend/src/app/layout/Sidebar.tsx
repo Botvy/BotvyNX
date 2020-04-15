@@ -6,9 +6,9 @@ export const StyledSidebar = styled.div`
 `;
 
 export const LeftSidebar: React.FC = () => (
-    <StyledSidebar className={`sidebar left`}/>
+    <StyledSidebar className={`sidebar left`} />
 );
 
 export const RigthSidebar: React.FC = () => (
-    <StyledSidebar className={`sidebar right`}/>
+    <StyledSidebar className={`sidebar right`} />
 );

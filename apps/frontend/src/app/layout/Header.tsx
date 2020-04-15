@@ -11,17 +11,15 @@ export const Brand = styled.span`
 
 export const Slogan = styled.span`
     &::before {
-    content: ' - ';
+        content: ' - ';
     }
 `;
 
 export default function Header() {
-    return <StyledHeader>
-        <Brand>
-            Botvy
-        </Brand>
-        <Slogan>
-            Your personal chatbot
-        </Slogan>
-    </StyledHeader>;
-};
+    return (
+        <StyledHeader>
+            <Brand>Botvy</Brand>
+            <Slogan>Your personal chatbot</Slogan>
+        </StyledHeader>
+    );
+}

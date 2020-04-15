@@ -18,17 +18,17 @@ export const StyledContent = styled.div`
 `;
 
 export const App = () => {
-    return <StyledApp id="app">
-        <Header/>
-        <Wrapper>
-            <LeftSidebar/>
-            <StyledContent id="content">
-                Content
-            </StyledContent>
-            <RigthSidebar/>
-        </Wrapper>
-        <Footer/>
-    </StyledApp>;
+    return (
+        <StyledApp id="app">
+            <Header />
+            <Wrapper>
+                <LeftSidebar />
+                <StyledContent id="content">Content</StyledContent>
+                <RigthSidebar />
+            </Wrapper>
+            <Footer />
+        </StyledApp>
+    );
 };
 
 export default App;
