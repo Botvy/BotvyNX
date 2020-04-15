@@ -37,6 +37,9 @@
         },
         "framework-events": {
             "tags": []
+        },
+        "framework-store": {
+            "tags": []
         }
     }
 }

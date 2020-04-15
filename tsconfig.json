@@ -20,7 +20,10 @@
                 "libs/framework/plugins/src/index.ts"
             ],
             "@botvy-nx/framework/ioc": ["libs/framework/ioc/src/index.ts"],
-            "@botvy-nx/framework/events": ["libs/framework/events/src/index.ts"]
+            "@botvy-nx/framework/events": [
+                "libs/framework/events/src/index.ts"
+            ],
+            "@botvy-nx/framework/store": ["libs/framework/store/src/index.ts"]
         }
     },
     "exclude": ["node_modules", "tmp"]
