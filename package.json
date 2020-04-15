@@ -33,7 +33,7 @@
         "electron-devtools-installer": "^3.0.0",
         "inversify": "^5.0.1",
         "react": "16.13.1",
-        "react-dom": "16.12.0",
+        "react-dom": "16.13.1",
         "react-redux": "^7.2.0",
         "redux": "^4.0.5",
         "reflect-metadata": "^0.1.13",
