@@ -1,7 +1,6 @@
 /**
  * Defines a basic plugin
  */
-
 export interface IPlugin {
     /**
      * The identifier of the plugin
@@ -22,7 +21,8 @@ export interface IPlugin {
      * Returns the components for a section
      * @param section The section to get the components for
      */
-    getComponentsForSection: (section: string) => JSX.Element;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    getComponentsForSection: (section: string) => any[];
 }
 
 export interface IPluginDescriptor extends IPlugin {
