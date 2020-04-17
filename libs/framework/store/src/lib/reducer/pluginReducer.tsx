@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { IPluginState } from '../states/IPluginState';
 import { Action } from 'redux';
 import { IPlugin } from '@botvy-nx/framework/plugins';
@@ -26,7 +26,7 @@ export const pluginReducer = (
                         name: 'test',
                         version: '0.0.0',
                         getComponentsForSection: (section) => (
-                            <div>test 123</div>
+                            [<div>test 123</div>]
                         ),
                     },
                 ] as IPlugin[],
