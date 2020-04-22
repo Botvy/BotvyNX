@@ -1,9 +1,6 @@
 import 'reflect-metadata';
-import {
-    getContainer,
-    InitializationSide,
-    Services,
-} from '@botvy-nx/framework/ioc';
+import { getContainer, InitializationSide } from '@botvy-nx/framework/ioc';
+import { Services } from '@botvy-nx/framework/constants';
 import { Application } from './Application';
 import { environment } from './environments/environment';
 

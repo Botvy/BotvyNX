@@ -2,7 +2,7 @@ import { IPCEventHandler } from '../IPCEventHandler';
 import { IpcMainInvokeEvent } from 'electron';
 import { inject, injectable } from 'inversify';
 import { Logger } from 'winston';
-import { Services } from '@botvy-nx/framework/ioc';
+import { Services } from '@botvy-nx/framework/constants';
 
 @injectable()
 export class GetVersionIPCEventHandler extends IPCEventHandler<string> {

@@ -3,7 +3,7 @@ import { inject, injectable } from 'inversify';
 import { existsSync, readdirSync } from 'fs';
 import { resolve } from 'path';
 import { Logger } from 'winston';
-import { Services } from '@botvy-nx/framework/ioc';
+import { Services } from '@botvy-nx/framework/constants';
 
 @injectable()
 export class PluginManager {

@@ -2,7 +2,7 @@ import { Container } from 'inversify';
 import { LoggerContainerModule } from './modules/LoggerContainerModule';
 import { PluginContainerModule } from './modules/PluginContainerModule';
 import { InitializationSide } from './InitializationSide';
-import { Services } from './Services';
+import { Services } from '@botvy-nx/framework/constants';
 import { IPCEventHandlerContainerModule } from './modules/IPCEventHandlerContainerModule';
 
 export const getContainer = async (

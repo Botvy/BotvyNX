@@ -40,6 +40,9 @@
         },
         "framework-store": {
             "tags": []
+        },
+        "framework-constants": {
+            "tags": []
         }
     }
 }

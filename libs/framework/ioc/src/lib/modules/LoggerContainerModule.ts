@@ -1,6 +1,6 @@
 import { ContainerModule } from 'inversify';
 import { createLogger, format, Logger, transports } from 'winston';
-import { Services } from '@botvy-nx/framework/ioc';
+import { Services } from '@botvy-nx/framework/constants';
 
 export class LoggerContainerModule extends ContainerModule {
     constructor() {
