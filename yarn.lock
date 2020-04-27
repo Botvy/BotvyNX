@@ -8829,10 +8829,10 @@ nwsapi@^2.2.0:
   resolved "https://registry.yarnpkg.com/nwsapi/-/nwsapi-2.2.0.tgz#204879a9e3d068ff2a55139c2c772780681a38b7"
   integrity sha512-h2AatdwYH+JHiZpv7pt/gSX1XoRGb7L/qSIeuqA6GwYoF9w1vP1cw42TO0aI2pNyshRK5893hNSl+1//vHK7hQ==
 
-nx-electron@^9.0.0-beta.5:
-  version "9.0.0-beta.5"
-  resolved "https://registry.yarnpkg.com/nx-electron/-/nx-electron-9.0.0-beta.5.tgz#da94d019c84263ffa465bda8068ab7c5dd214ea6"
-  integrity sha512-P0OYkSo/6+ItHFEgVaXNWmptov///Xx7ljlhu41kfNPixcGBSkA+g2trpg6qduCX6II2+ElgLdBK1qTr6IiFaw==
+nx-electron@^9.0.0-beta.6:
+  version "9.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/nx-electron/-/nx-electron-9.0.0-beta.6.tgz#e93a32e79489ac43f84b61ba0b99eaa7025685d0"
+  integrity sha512-HivKzSKcGmBmIxdO+XrLI0ZR/D4wK0K12b4W+mlhmEqeGzb8sO2Z4Mjeipu0XTwThdBNnBsYIFrTtcP0wlYhMg==
   dependencies:
     "@angular-devkit/architect" "~0.901.1"
     "@angular-devkit/build-webpack" "~0.901.1"
